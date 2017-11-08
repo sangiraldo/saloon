@@ -1,0 +1,13 @@
+<div class="container center ">
+  <% flash.each do |key, value| %>
+    <% if key == "alert" %>
+      <span class="waves-effect red lighten-5 btn flash_message alert">
+        <%= value %>
+      </span>
+    <% else %>
+      <span class="waves-effect waves-light btn flash_message sucess">
+        <%= value %>
+      </span>
+    <% end %>
+  <% end %>
+</div>

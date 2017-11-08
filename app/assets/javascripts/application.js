@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require font-awesome
 //= require materialize-sprockets
 //= require_tree .
 
@@ -21,5 +22,7 @@ document.addEventListener("turbolinks:load", function() {
 
   $('.parallax').parallax();
   $('.button-collapse').sideNav();
+
+  $(".flash_message").fadeOut(6000);
 
  })

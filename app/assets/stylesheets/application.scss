@@ -16,3 +16,102 @@
 
  @import "materialize";
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+a {
+  color: white;
+}
+
+ div span.flash_message {
+  margin-top: 20px;
+ }
+
+ div span.flash_message_alert {
+   margin-top: 20px;
+ }
+
+ .container.center > span {
+   display: block;
+ }
+
+ .sucess {
+   background-color: #5DBB6C ;
+   border-radius: 10px;
+   border-width: 2px;
+ }
+
+ .alert {
+   background-color: rgb(252,222,222);
+   border-radius: 10px;
+   border-width: 2px;
+   border-color: rgb(210,178,178);
+   color: rgb(153,17,17);
+   border-style: solid;
+ }
+
+ form {
+   margin-top: 35px;
+ }
+
+ .error-icon {
+   color: red;
+ }
+
+ .error-border {
+   border-bottom: 1px solid #E53935 !important;
+   box-shadow: 0 1px 0 0 #E53935 !important;
+ }
+
+ .error {
+   color: #E53935;
+ }
+
+ .error-title {
+   font-size: 20px;
+   font-weight: bold;
+ }
+
+ .error-message li {
+   margin: 10px;
+ }
+
+ .pagination a li.active {
+   color: #fff;
+ }
+ .pagination {
+   margin: 3%;
+   a li {
+     margin-top: 4px;
+     width: 2%;
+     height: auto;
+   }
+ }
+
+ @media #{$small-and-down} {
+   .container.center > span {
+     height: auto;
+   }
+
+   div span.flash_message_alert {
+     margin-top: 10px;
+   }
+
+   div span.flash_message {
+     margin-top: 10px;
+   }
+   .pagination {
+     margin: 3%;
+     a li {
+       width: 4%;
+       height: auto;
+     }
+   }
+ }
+
+ .file-field {
+     margin-left: 0.5% !important;
+ }
+
+ .dropdown-content {
+  margin-left: 15px !important;
+  margin-top: 0px !important;
+ }

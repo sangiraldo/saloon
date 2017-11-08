@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+li, a {
+  color: inherit;
+}
+
+.row {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.social_networks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.social-item {
+  float: left;
+}
+
+.social_networks .social-item {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.social {
+  width: 60%;
+  margin: 0 auto;
+}
