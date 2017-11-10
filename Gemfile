@@ -1,7 +1,9 @@
+ruby "2.3.1"
+
 source 'https://rubygems.org'
 
-
 gem 'devise'
+gem 'omniauth-facebook', '~> 4.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -15,10 +17,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass'
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'byebug', platform: :mri
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
 end
 
 group :development do
+  gem 'faker', '~> 1.7', '>= 1.7.2'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
