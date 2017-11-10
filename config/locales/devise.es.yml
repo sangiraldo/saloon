@@ -156,8 +156,10 @@ es:
         other: 'Ocurrieron errores al tratar de guardar %{resource}'
   telephone: Teléfono fijo
   cellphone: Celular
-  address: Direccion
+  address: Dirección
   save: "Guardar cambios"
+  full_name: Nombre completo
+  email: Correo electrónico
   password: "Contraseña"
   password_confirmation: "Confirmar contraseña"
   forgot_your_password: "¿Ha olvidado su contraseña?"

@@ -4,7 +4,7 @@
     <ul class="right hide-on-med-and-down" data-turbolinks="false">
       <% if user_signed_in? %>
         <a class="dropdown-button btn grey darken-1 profile" data-beloworigin="true"
-        data-activates="dropdown1"><%= current_user.email %></a>
+        data-activates="dropdown1"><%= current_user.full_name %></a>
 
         <ul id="dropdown1" class="dropdown-content">
           <li><%= link_to  t('profile'), edit_user_registration_url %></a></li>
