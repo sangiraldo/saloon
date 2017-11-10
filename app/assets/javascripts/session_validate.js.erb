@@ -1,0 +1,48 @@
+document.addEventListener("turbolinks:load", function() {
+  $.validator.setDefaults({
+    highlight: function(element) {
+      $(element)
+        .closest('.validate')
+        .removeClass('active')
+        .addClass('error-border');
+    },
+    unhighlight: function(element) {
+      $(element)
+        .closest('.validate')
+        .removeClass('error-border');
+    }
+  });
+
+  $("#formValidateSession").validate({
+    rules: {
+      'user[password]': {
+        required: true,
+        minlength: 6
+      },
+      'user[email]': {
+        required: true,
+        email: true
+      },
+
+    },
+    messages: {
+      'user[password]': {
+        required: "<%= I18n.t('password_required') %>",
+        minlength: "<%= I18n.t('password_minlength') %>"
+      },
+      'user[email]': {
+        required: "<%= I18n.t('email_required') %>",
+        email: "<%= I18n.t('email_valid') %>"
+      },
+    },
+    errorElement : 'div',
+    errorPlacement: function(error, element) {
+      var placement = $(element).data('error');
+      if (placement) {
+        $(placement).append(error)
+      } else {
+        error.insertAfter(element);
+      }
+    }
+  });
+})

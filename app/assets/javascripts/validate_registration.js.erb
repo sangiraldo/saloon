@@ -1,0 +1,137 @@
+document.addEventListener("turbolinks:load", function() {
+  $.validator.setDefaults({
+    highlight: function(element) {
+      $(element)
+        .closest('.validate')
+        .removeClass('active')
+        .addClass('error-border');
+    },
+    unhighlight: function(element) {
+      $(element)
+        .closest('.validate')
+        .removeClass('error-border');
+    }
+  });
+
+  $("#formValidateRegistration").validate({
+    rules: {
+      'user[full_name]': "required",
+      'user[email]': {
+        required: true,
+        email: true,
+      },
+      'user[password]': {
+          required: true,
+          minlength: 6
+      },
+      'user[password_confirmation]' : {
+        equalTo: "#password"
+      },
+      'user[telephone]': {
+        required: true,
+        number: true
+      },
+      'user[cellphone]': {
+        required: true,
+        number: true
+      },
+      'user[address]': {
+        required:true
+      }
+    },
+    messages: {
+      'user[full_name]': "<%= I18n.t('full_name_required') %>",
+      'user[email]': {
+        required: "<%= I18n.t('email_required') %>",
+        email: "<%= I18n.t('email_valid') %>"
+      },
+      'user[password]': {
+        required: "<%= I18n.t('password_required') %>",
+        minlength: "<%= I18n.t('password_minlength') %>"
+      },
+      'user[password_confirmation]': {
+        required: "<%= I18n.t('password_required') %>",
+        equalTo: "<%= I18n.t('password_equalto') %>"
+      },
+      'user[telephone]': {
+        number: "<%= I18n.t('telephone_digits') %>",
+        required: "<%= I18n.t('telephone_required') %>"
+      },
+      'user[cellphone]': {
+        number: "<%= I18n.t('cellphone_digits') %>",
+        required: "<%= I18n.t('cellphone_required') %>"
+      },
+      'user[address]': {
+        required: "<%= I18n.t('address_required') %>"
+      }
+    },
+    errorElement : 'div',
+    errorPlacement: function(error, element) {
+      var placement = $(element).data('error');
+      if (placement) {
+        $(placement).append(error)
+      } else {
+        error.insertAfter(element);
+      }
+    }
+  });
+
+  $("#formValidateEdit").validate({
+    rules: {
+      'user[full_name]': "required",
+      'user[password]': {
+          minlength: 6,
+      },
+      'user[password_confirmation]' : {
+        equalTo: "#password",
+        required: {
+          depends: function (element) {
+            return($("#password").val() !== "")
+          },
+        }
+      },
+      'user[telephone]': {
+        required: true,
+        number: true
+      },
+      'user[cellphone]': {
+        required: true,
+        number: true
+      },
+      'user[address]': {
+        required:true
+      }
+    },
+    messages: {
+      'user[full_name]': "<%= I18n.t('full_name_required') %>",
+      'user[password]': {
+        required: "<%= I18n.t('password_required') %>",
+        minlength: "<%= I18n.t('password_minlength') %>"
+      },
+      'user[password_confirmation]': {
+        required: "<%= I18n.t('password_required') %>",
+        equalTo: "<%= I18n.t('password_equalto') %>"
+      },
+      'user[telephone]': {
+        number: "<%= I18n.t('telephone_digits') %>",
+        required: "<%= I18n.t('telephone_required') %>"
+      },
+      'user[cellphone]': {
+        number: "<%= I18n.t('cellphone_digits') %>",
+        required: "<%= I18n.t('cellphone_required') %>"
+      },
+      'user[address]': {
+        required: "<%= I18n.t('address_required') %>"
+      }
+    },
+    errorElement : 'div',
+    errorPlacement: function(error, element) {
+      var placement = $(element).data('error');
+      if (placement) {
+        $(placement).append(error)
+      } else {
+        error.insertAfter(element);
+      }
+    }
+  });
+})

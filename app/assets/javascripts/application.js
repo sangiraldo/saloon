@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require font-awesome
+//= require jquery-validate
 //= require materialize-sprockets
 //= require_tree .
 
