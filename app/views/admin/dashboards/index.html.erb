@@ -1,0 +1,8 @@
+<div class="center">
+  <h3><%= t('state_charts') %></h3>
+</div>
+
+<div>
+  <h4><%= t('users') %></h4>
+  <%= line_chart User.group_by_week(:created_at, time_zone: "Bogota").count %>
+</div>

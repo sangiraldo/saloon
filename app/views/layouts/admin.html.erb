@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Saloon</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+
+  <body>
+    <main>
+      <%= render partial: "partials/admin_navbar" %>
+      <div class="admin-container">
+        <%= render partial: "partials/flash_messages" %>
+        <%= yield %>
+      </div>
+    </main>
+  </body>
+</html>

@@ -30,8 +30,18 @@
           <div class="validate_address"></div>
         </div>
 
+        <div class="input-field col s12 input-gender">
+          <label for=""><%= t('gender')%></label><br>
+          <%= f.radio_button :gender, 'male' %>
+          <%= f.label :gender, "Hombre", value: "male"  %>
+          <%= f.radio_button :gender, 'female' %>
+          <%= f.label :gender, "Mujer", value: "female" %>
+          <%= f.radio_button :gender, 'other' %>
+          <%= f.label :gender, "Otro", value: "other" %>
+        </div>
+
         <% if (current_user.provider.blank?) %>
-          <div class="input-field col s12">
+          <div class="input-field col s12 input-pass">
             <%= f.label t('password'), for: "password", name: "user[password]", class: "validate", data: {error: '.validate_password'} %>
             <%= f.password_field :password, autocomplete: "off", id:"password" %>
             <div class="validate_password"></div>

@@ -1,0 +1,45 @@
+<div class="admin-container">
+  <h3> <%= t('user_listing') %></h3>
+</div>
+
+<div class="container">
+  <div class="row">
+    <%= search_form_for [:admin, @search], url: search_admin_users_url do |f| %>
+      <%= f.label :full_name_cont %>
+      <%= f.search_field :full_name_cont %>
+      <%= f.submit class: "btn waves-effect waves-light teal darken-1" %>
+    <% end %>
+  </div>
+</div>
+
+<table class="centered highlight">
+  <thead>
+    <tr>
+      <th> <%= sort_link(@search, :id, t('id'), default_order: :desc) %> </th>
+      <th> <%= sort_link(@search, :full_name, t('full_name'), default_order: :desc) %> </th>
+      <th data-field="email"><%= t('email') %></th>
+      <th data-field="cellphone"><%= t('cellphone') %></th>
+      <th data-field="actions"> <%= t('actions') %> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td> <%= user.id %> </td>
+        <td> <%= user.full_name %> </td>
+        <td> <%= user.email %> </td>
+        <td> <%= user.cellphone %> </td>
+        <td>
+          <%= link_to admin_user_url(user), method: :delete, data: { confirm: t('confirm') } do %>
+            <i class="tooltipped fa fa-trash" aria-hidden="true" data-position="bottom" data-delay="50" data-tooltip="Eliminar"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="center">
+  <%= will_paginate @users, renderer: MaterializePagination::Rails %>
+</div>

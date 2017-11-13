@@ -40,12 +40,20 @@
           <div class="validate_cellphone"></div>
         </div>
         <div class="input-field col s6">
-          <%= radio_button_tag(:'user[gender]', "male", checked = true) %>
+          <!-- <%= radio_button_tag(:'user[gender]', "male", checked = true) %>
           <%= label_tag(:'user[gender_male]', "Hombre") %>
           <%= radio_button_tag(:'user[gender]', "female") %>
           <%= label_tag(:'user[gender_fale]', "Mujer") %>
           <%= radio_button_tag(:'user[gender]', "other") %>
-          <%= label_tag(:'user[gender_other]', "Otro") %>
+          <%= label_tag(:'user[gender_other]', "Otro") %> -->
+
+          <%= f.radio_button :gender, 'male', checked: true %>
+          <%= f.label :gender, "Hombre", value: "male"  %>
+          <%= f.radio_button :gender, 'female' %>
+          <%= f.label :gender, "Mujer", value: "female" %>
+          <%= f.radio_button :gender, 'other' %>
+          <%= f.label :gender, "Otro", value: "other" %>
+
         </div>
       </div>
 
