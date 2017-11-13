@@ -13,6 +13,11 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'chartkick', '~> 2.2', '>= 2.2.4'
+gem 'groupdate', '~> 3.2'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+gem 'will_paginate-materialize', '~> 0.1.0'
 
 gem 'materialize-sass'
 
