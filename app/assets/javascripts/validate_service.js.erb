@@ -1,0 +1,44 @@
+document.addEventListener("turbolinks:load", function() {
+  $.validator.setDefaults({
+    highlight: function(element) {
+      $(element)
+        .closest('.validate')
+        .removeClass('active')
+        .addClass('error-border');
+    },
+    unhighlight: function(element) {
+      $(element)
+        .closest('.validate')
+        .removeClass('error-border');
+    }
+  });
+
+  $("#formValidateService").validate({
+    rules: {
+      'service[name]': {
+        required: true,
+      },
+      'service[description]': {
+        required: true,
+      },
+
+    },
+    messages: {
+      'service[name]': {
+        required: "<%= I18n.t('name_required') %>",
+      },
+      'service[description]': {
+        required: "<%= I18n.t('description_require') %>",
+      },
+    },
+    errorElement : 'div',
+    errorPlacement: function(error, element) {
+      var placement = $(element).data('error');
+      if (placement) {
+        $(placement).append(error)
+      } else {
+        error.insertAfter(element);
+      }
+    }
+  });
+})

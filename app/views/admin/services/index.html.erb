@@ -1,0 +1,44 @@
+<div class="admin-container">
+  <h3><%= t('services')%></h3>
+</div>
+
+<div class="center row">
+  <%= link_to t('new_service'), new_admin_service_url, class: "btn green darken-3" %>
+</div>
+
+<table class="centered highlight">
+  <thead>
+    <tr>
+      <th><%= t('name')%></th>
+      <th><%= t('description')%></th>
+      <th><%= t('actions')%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @services.each do |service| %>
+      <tr>
+        <td><%= service.name %></td>
+        <td><%= service.description %></td>
+        <td>
+          <%= link_to edit_admin_service_url(service) do %>
+            <i class="tooltipped fa fa-pencil" aria-hidden="true" data-position="bottom" data-delay="50" data-tooltip="Editar"></i>
+          <% end %>
+          &nbsp
+          <%= link_to admin_service_url(service), method: :delete, data: { confirm: t('confirm') } do %>
+            <i class="tooltipped fa fa-trash" aria-hidden="true" data-position="bottom" data-delay="50" data-tooltip="Eliminar"></i>
+          <% end %>
+
+          &nbsp
+          <%= link_to admin_service_url(service) do %>
+            <i class="tooltipped fa fa-eye" aria-hidden="true" data-position="bottom" data-delay="50" data-tooltip="Ver servicio"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="center">
+  <%= will_paginate @services, renderer: MaterializePagination::Rails %>
+</div>

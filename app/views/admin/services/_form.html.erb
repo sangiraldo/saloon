@@ -1,0 +1,23 @@
+<div class="container">
+  <%= form_for [:admin, @service], html: {id: "formValidateService"}  do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :name, id: "name", name: "service[name]", class: "validate active", data: {error: '.validate_name'} %>
+        <%= f.label t('name'), for: "name" %>
+        <div class="validate_name"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :description, id: "description", name: "service[description]", class: "validate active", data: {error: '.validate_description'} %>
+        <%= f.label t('description'), for: "description" %>
+        <div class="validate_description"></div>
+      </div>
+    </div>
+
+    <div class="container center">
+      <%= f.submit class: "btn waves-effect waves-light teal darken-1", id: "btn" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<div class="admin-container">
+  <h4><%= t('service')%></h4>
+</div>
+
+<div class="container">
+
+  <p>
+    <strong><%= t('name')%>:</strong>
+    <%= @service.name %>
+  </p>
+
+  <p>
+    <strong><%= t('description')%>:</strong>
+    <%= @service.description %>
+  </p>
+
+  <div class="container">
+    <%= link_to t('edit'), edit_admin_service_url(@service), class: "btn waves-effect waves-light blue darken-1" %>
+    <%= link_to t('back'), admin_services_url, class: "btn waves-effect waves-light teal darken-1" %>
+  </div>
+
+</div>

@@ -6,6 +6,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
+  # Validations
+
+  validates :full_name, :email, presence: true
+  validates_presence_of :full_name, :email, :cellphone, :address, unless: -> { from_omniauth? }
+
   # Methods
 
   def is_admin?

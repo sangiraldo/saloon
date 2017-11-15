@@ -1,4 +1,8 @@
 es:
+  helpers:
+    submit:
+      create: Crear
+      update: Actualizar
   profile: Mi perfil
   sign_out: Cerrar sesión
   social_networks: Redes sociales
@@ -14,3 +18,18 @@ es:
   gender: Genero
   id: Id
   full_name: Nombre Completo
+  name: Nombre
+  description: Descripción
+  actions: Acciones
+  new_service: Nuevo servicio
+  edit_service: Editar servicio
+  name_required: Debe escribir un nombre
+  description_require: Debe escribir una descripción
+  edit: Editar
+  back: Atrás
+  service: Servicio
+  confirm: ¿Estás seguro?
+  created_successfully: "Creado con éxito"
+  updated_successfully: "Actualizado con éxito"
+  deleted_successfully: "Eliminado con éxito"
+  user_listing: Listado de usuarios
