@@ -1,0 +1,63 @@
+<div class="container create-post">
+  <%= form_for @establishment, html: { id: "formValidateEstablishment"} do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :name, id: "name", name: "establishment[name]", class: "validate active", data: {error: '.validate_name'} %>
+        <%= f.label t('name'), for: "name" %>
+        <div class="validate_name"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :description, as: :text, name: "establishment[description]", class: "validate materialize-textarea active", id: "establishment", data: {error: '.validate_description'} %>
+        <%= f.label t('description'), for: "description" %>
+        <div class="validate_description"></div>
+      </div>
+    </div>
+
+    <div class="file-field input-field row">
+      <div class="col l2 s3 btn">
+        <span><%= t('image') %></span>
+          <%= f.file_field :image %>
+        </div>
+      <div class="col l10 s9 file-path-wrapper">
+        <input class="file-path validate" type="<%= :text %>"></input>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :address, id: "address", name: "establishment[address]", class: "validate active", data: {error: '.validate_address'} %>
+        <%= f.label t('address'), for: "address" %>
+        <div class="validate_address"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :city, id: "city", name: "establishment[city]", class: "validate active", data: {error: '.validate_city'} %>
+        <%= f.label t('city'), for: "city" %>
+        <div class="validate_city"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :district, id: "district", name: "establishment[district]", class: "validate active", data: {error: '.validate_district'} %>
+        <%= f.label t('district'), for: "district" %>
+        <div class="validate_district"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="center col s6">
+        <%= link_to t('back'), user_establishments_path, class: "btn waves-effect waves-light red lighten-1" %>
+      </div>
+      <div class="center col s6">
+        <%= f.submit class: "btn waves-effect waves-light teal darken-1", id: "btn" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,25 @@
+<h2 class="center"><%= t('establishments') %></h2>
+
+<div class="grid-post" id="cotaniner-establishment">
+  <% @establishments.each do |establishment| %>
+    <div class="grid-post-item">
+      <div class="card medium hoverable">
+        <div class="card-image waves-effect waves-block waves-light">
+          <%= link_to (image_tag establishment.image.url(:square)), establishment, data: { turbolinks: false } %>
+        </div>
+        <div class="card-content">
+          <span class="card-title"><%= establishment.name.capitalize %></span>
+          <p class="activator"><%= link_to t('view_more'), establishment, data: { turbolinks: false } %><i class="material-icons right">more_vert</i></p>
+        </div>
+        <div class="card-reveal">
+          <span class="center card-title"><%= establishment.name.capitalize %><i class="material-icons right">close</i></span>
+          <p><%= establishment.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<ul class="center">
+  <%= will_paginate @establishments, renderer: MaterializePagination::Rails  %>
+</ul>

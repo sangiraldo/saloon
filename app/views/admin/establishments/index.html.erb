@@ -1,0 +1,52 @@
+<div class="admin-container">
+  <h3> <%= t('establishment_listing') %></h3>
+</div>
+
+<div class="container">
+  <div class="row">
+    <%= search_form_for [:admin, @search], url: search_admin_establishments_url do |f| %>
+      <%= f.label t('name_cont') %>
+      <%= f.search_field :name_cont %>
+      <%= f.submit class: "btn waves-effect waves-light teal darken-1" %>
+    <% end %>
+  </div>
+</div>
+
+<table class="centered highlight">
+  <thead>
+    <tr>
+      <th> <%= sort_link(@search, :id, t('id'), default_order: :desc) %> </th>
+      <th> <%= sort_link(@search, :name, t('name'), default_order: :desc) %> </th>
+      <th data-field="address"><%= t('address') %></th>
+      <th data-field="city"><%= t('city') %></th>
+      <th data-field="services"> <%= t('services') %> </th>
+      <th data-field="actions"> <%= t('actions') %> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @establishments.each do |establishment| %>
+      <tr>
+        <td> <%= establishment.id %> </td>
+        <td> <%= establishment.name %> </td>
+        <td> <%= establishment.address %> </td>
+        <td> <%= establishment.city %> </td>
+        <td> <%= establishment.city %> </td>
+        <td>
+          <%= link_to admin_establishment_url(establishment), method: :delete, data: { confirm: t('confirm') } do %>
+            <i class="tooltipped fa fa-trash" aria-hidden="true" data-position="bottom" data-delay="50" data-tooltip="Eliminar"></i>
+          <% end %>
+
+          &nbsp
+          <%= link_to establishment_url(establishment) do %>
+            <i class="tooltipped fa fa-eye" aria-hidden="true" data-position="bottom" data-delay="50" data-tooltip="Ver establecimiento"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="center">
+  <%= will_paginate @establishments, renderer: MaterializePagination::Rails %>
+</div>

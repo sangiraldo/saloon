@@ -4,5 +4,10 @@
 
 <div>
   <h4><%= t('users') %></h4>
-  <%= line_chart User.group_by_week(:created_at, time_zone: "Bogota").count %>
+  <%= line_chart User.group_by_day(:created_at, time_zone: "Bogota").count %>
+</div>
+
+<div>
+  <h4><%= t('establishments') %></h4>
+  <%= line_chart Establishment.group_by_day(:created_at, time_zone: "Bogota").count %>
 </div>
