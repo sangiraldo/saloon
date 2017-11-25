@@ -17,7 +17,12 @@
 
   <div class="row">
     <div class="col s12">
-      <h3><%= t('services') %></h3>
+      <ul class="collection with-header">
+        <li class="collection-header"><h4><%= t('services') %></h4><li>
+        <% @services.each do |service|  %>
+          <li class="collection-item"><%= service %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 

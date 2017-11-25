@@ -28,6 +28,7 @@ es:
   address_required: Debe escribir una dirección
   city_required: Debe escribir una ciudad
   district_required: Debe escribir un barrio
+  service_required: Debe seleccionar un servicio
   edit: Editar
   back: Atrás
   service: Servicio

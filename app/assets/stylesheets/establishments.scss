@@ -31,6 +31,11 @@ header {
   width: 57%;
 }
 
+.validate_service {
+  padding-top: 60px;
+  padding-left: 10px;
+}
+
 //Styles for div post recommended
 .content-post-rec.row {
   @include style-flex;

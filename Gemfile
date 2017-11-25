@@ -2,6 +2,7 @@ ruby "2.3.1"
 
 source 'https://rubygems.org'
 
+gem 'acts-as-taggable-on', '~> 5.0'
 gem 'devise'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -9,6 +10,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'paperclip', '~> 5.1'
 gem 'sass-rails', '~> 5.0'
+gem "select2-rails"
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'

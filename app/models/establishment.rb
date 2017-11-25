@@ -12,4 +12,9 @@ class Establishment < ApplicationRecord
 
   validates :name, :description, :city, :address, :district, presence: true
   validates :name, uniqueness: true
+
+  # Tags
+
+  acts_as_taggable
+  
 end

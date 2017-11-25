@@ -10,6 +10,7 @@ class EstablishmentsController < ApplicationController
   # GET /establishments/1
   # GET /establishments/1.json
   def show
+    @services = @establishment.tag_list
   end
 
   # GET /establishments/new
@@ -73,6 +74,6 @@ class EstablishmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def establishment_params
-      params.require(:establishment).permit(:name, :description, :address, :city, :district, :image).merge(user_id: current_user.id)
+      params.require(:establishment).permit(:name, :description, :address, :city, :district, :image, tag_list:[]).merge(user_id: current_user.id)
     end
 end
