@@ -25,6 +25,9 @@ es:
   edit_service: Editar servicio
   name_required: Debe escribir un nombre
   description_require: Debe escribir una descripción
+  address_required: Debe escribir una dirección
+  city_required: Debe escribir una ciudad
+  district_required: Debe escribir un barrio
   edit: Editar
   back: Atrás
   service: Servicio
@@ -33,3 +36,17 @@ es:
   updated_successfully: "Actualizado con éxito"
   deleted_successfully: "Eliminado con éxito"
   user_listing: Listado de usuarios
+  establishments: Establecimientos
+  contact: "Contacto"
+  about: "Nosotros"
+  establishment_listing: Listado de establecimientos
+  city: Ciudad
+  name_cont: Nombre contiene
+  view_more: Ver más
+  new_establishment: Nuevo establecimiento
+  edit_establishment: Editar establecimiento
+  image: Imagen
+  district: Barrio
+  back: Atrás
+  my_establishment: Mis establecimientos
+  delete: Eliminar

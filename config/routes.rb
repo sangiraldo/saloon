@@ -12,10 +12,18 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :establishments,    only: [:index, :destroy] do
+      collection do
+        match 'search' => 'establishments#search', via: [:get, :post], as: :search
+      end
+    end
+
     resources :services
 
   end
 
   root 'pages#home'
+  resources :establishments
+  get "/user_establishments", to: "establishments#user_establishment"
 
 end
