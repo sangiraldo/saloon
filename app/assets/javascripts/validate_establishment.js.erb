@@ -1,0 +1,61 @@
+document.addEventListener("turbolinks:load", function() {
+  $.validator.setDefaults({
+    highlight: function(element) {
+      $(element)
+        .closest('.validate')
+        .removeClass('active')
+        .addClass('error-border');
+    },
+    unhighlight: function(element) {
+      $(element)
+        .closest('.validate')
+        .removeClass('error-border');
+    }
+  });
+
+  $("#formValidateEstablishment").validate({
+    rules: {
+      'establishment[name]': {
+        required: true,
+      },
+      'establishment[description]': {
+        required: true,
+      },
+      'establishment[address]': {
+        required: true,
+      },
+      'establishment[city]': {
+        required: true,
+      },
+      'establishment[district]': {
+        required: true,
+      },
+    },
+    messages: {
+      'establishment[name]': {
+        required: "<%= I18n.t('name_required') %>",
+      },
+      'establishment[description]': {
+        required: "<%= I18n.t('description_require') %>",
+      },
+      'establishment[address]': {
+        required: "<%= I18n.t('address_required') %>",
+      },
+      'establishment[city]': {
+        required: "<%= I18n.t('city_required') %>",
+      },
+      'establishment[district]': {
+        required: "<%= I18n.t('district_required') %>",
+      },
+    },
+    errorElement : 'div',
+    errorPlacement: function(error, element) {
+      var placement = $(element).data('error');
+      if (placement) {
+        $(placement).append(error)
+      } else {
+        error.insertAfter(element);
+      }
+    }
+  });
+})
