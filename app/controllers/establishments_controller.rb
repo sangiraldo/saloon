@@ -20,6 +20,9 @@ class EstablishmentsController < ApplicationController
 
   # GET /establishments/1/edit
   def edit
+    unless @establishment.user_id == current_user.id
+      redirect_to establishment_url
+    end
   end
 
   # POST /establishments
