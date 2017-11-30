@@ -7,6 +7,7 @@ FactoryBot.define do
     password "santiago123456"
     cellphone "3014842209"
     address "Calle 88"
+    gender "male"
     is_admin true
   end
 end

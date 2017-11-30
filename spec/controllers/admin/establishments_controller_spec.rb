@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Admin::ServicesController, type: :controller do
+RSpec.describe Admin::EstablishmentsController, type: :controller do
 
   before(:each) { create_logged_in_user }
 
@@ -13,10 +13,10 @@ RSpec.describe Admin::ServicesController, type: :controller do
 
   describe "DELETE destroy" do
     it "destroy a service" do
-      service = create(:service)
+      establishment = create(:establishment)
       expect {
-        delete :destroy, params: { id: service }
-      }.to change(Service, :count).by(-1)
+        delete :destroy, params: { id: establishment }
+      }.to change(Establishment, :count).by(-1)
     end
   end
 end

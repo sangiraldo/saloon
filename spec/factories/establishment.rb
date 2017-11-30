@@ -6,5 +6,6 @@ FactoryBot.define do
     address "Cll 4 F"
     city "Medellin"
     district "Belen"
+    tag_list ["Barberia"]
   end
 end
