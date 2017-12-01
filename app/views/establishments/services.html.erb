@@ -1,0 +1,14 @@
+<div class="row">
+  <h3 class="center"><%= t('services') %></h3>
+  <div class="categories">
+    <% @tag_establishments.each do |tag| %>
+      <div class="card card-all row">
+        <ul class="center">
+          <li><%= link_to tag.name.capitalize, tag_establishments_url(tag.name.downcase), class: "name-tag" %></li>
+          <li class="divider"></li>
+          <li class="tag"><%= tag.taggings.where(taggable_type: "Establishment").count %> <%= t('establishment', count: tag.taggings.where(taggable_type: "Establishment").count) %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

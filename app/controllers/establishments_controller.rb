@@ -4,7 +4,13 @@ class EstablishmentsController < ApplicationController
   # GET /establishments
   # GET /establishments.json
   def index
-    @establishments = Establishment.all.paginate(page: params[:page], per_page: 8)
+    if params[:tag]
+      @establishments = Establishment.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 8)
+    else
+      @establishments = Establishment.all.paginate(page: params[:page], per_page: 8)
+    end
+    @tag_establishments = Establishment.tag_counts.last(5)
+    @tag_establishment_count = Establishment.tag_counts.count
   end
 
   # GET /establishments/1
@@ -67,6 +73,10 @@ class EstablishmentsController < ApplicationController
 
   def user_establishment
     @establishments = Establishment.where(user_id: current_user.id).paginate(page: params[:page], per_page: 8)
+  end
+
+  def services
+    @tag_establishments = Establishment.tag_counts
   end
 
   private

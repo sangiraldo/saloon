@@ -1,5 +1,22 @@
 <h2 class="center"><%= t('establishments') %></h2>
 
+<div class="categories">
+  <% @tag_establishments.each do |tag| %>
+    <div class="card row">
+      <ul class="center">
+        <li><%= link_to tag.name.capitalize, tag_establishments_url(tag.name.downcase), class: "name-tag" %></li>
+        <li class="divider"></li>
+        <li class="tag"><%= tag.taggings.where(taggable_type: "Establishment").count %> <%= t('establishment', count: tag.taggings.where(taggable_type: "Establishment").count) %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
+<% if @tag_establishment_count > 5 %>
+  <div class="view-more center">
+    <%= link_to t('view-more_services'), services_establishment_url, class: "btn waves-effect blue-grey darken-1" %>
+  </div>
+<% end %>
+
 <div class="grid-post" id="cotaniner-establishment">
   <% @establishments.each do |establishment| %>
     <div class="grid-post-item">
