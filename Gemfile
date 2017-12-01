@@ -43,6 +43,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'aws-sdk', '~> 2.3.0'
 end
 
 group :test do

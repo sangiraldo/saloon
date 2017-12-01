@@ -51,3 +51,7 @@ es:
   back: Atrás
   my_establishment: Mis establecimientos
   delete: Eliminar
+  establishment:
+    one: establecimiento
+    other: establecimientos
+  view-more_services: Ver más servicios
