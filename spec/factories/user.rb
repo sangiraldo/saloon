@@ -9,5 +9,6 @@ FactoryBot.define do
     address "Calle 88"
     gender "male"
     is_admin true
+    confirmed_at Time.now
   end
 end

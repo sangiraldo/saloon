@@ -17,7 +17,8 @@ RSpec.describe Users::RegistrationsController, type: :controller do
         password: "santiago123456",
         cellphone: "3014842255",
         address: "Calle 88",
-        gender: "male"
+        gender: "male",
+        confirmed_at: Time.now
       }
     end
 
