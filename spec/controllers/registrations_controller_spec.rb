@@ -18,7 +18,6 @@ RSpec.describe Users::RegistrationsController, type: :controller do
         cellphone: "3014842255",
         address: "Calle 88",
         gender: "male",
-        confirmed_at: Time.now
       }
     end
 

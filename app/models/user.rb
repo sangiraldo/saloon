@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
   # Validations
@@ -23,20 +23,17 @@ class User < ApplicationRecord
       user.provider = auth.provider
       user.uid = auth.uid
       user.full_name = auth.info.name
-      user.confirmed_at = Time.now
       user.save
     elsif where(provider: auth.provider, uid: auth.uid).exists?
       user = find_by(provider: auth.provider, uid: auth.uid)
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
-      user.confirmed_at = Time.now
       user.full_name = auth.info.name
       user.save
     else
       user = where(provider: auth.provider, uid: auth.uid).create do |u|
         u.email = auth.info.email
         u.password = Devise.friendly_token[0,20]
-        u.confirmed_at = Time.now
         u.full_name = auth.info.name
       end
     end
