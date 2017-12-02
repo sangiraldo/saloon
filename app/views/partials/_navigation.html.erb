@@ -3,7 +3,7 @@
     <%= link_to 'Saloon', root_path, class: "brand-logo", style: "margin-left: 15px" %>
     <ul class="right hide-on-med-and-down" data-turbolinks="false">
       <li> <%= link_to t('establishments').upcase, establishments_url %></li>
-      <li> <%= link_to t('about').upcase, establishments_url %></li>
+      <li> <%= link_to t('about').upcase, about_url %></li>
       <li> <%= link_to t('contact').upcase, establishments_url %></li>
 
       <% if user_signed_in? %>
@@ -26,6 +26,9 @@
 
     </ul>
     <ul id="nav-mobile" class="side-nav">
+      <li> <%= link_to t('establishments'), establishments_url %></li>
+      <li> <%= link_to t('about'), about_url %></li>
+      <li class="divider"></li>
       <% if user_signed_in? %>
         <li><%= link_to(t('profile'), edit_user_registration_url) %></li>
         <li><%= link_to  t('establishments'), user_establishments_url %></a></li>

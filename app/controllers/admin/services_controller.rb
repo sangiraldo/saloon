@@ -17,27 +17,20 @@ class Admin::ServicesController < Admin::BaseController
 
   def create
     @service = Service.new(service_params)
-
-    respond_to do |format|
-      if @service.save
-        format.html { redirect_to admin_services_url, notice: t('created_successfully') }
-        format.json { render :show, status: :created, location: @service }
-      else
-        format.html { render :new }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
-      end
+    if @service.save
+      redirect_to admin_services_url, notice: t('created_successfully')
+    else
+      flash[:alert] = @service.errors.values.first.first
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @service.update(service_params)
-        format.html { redirect_to admin_services_url, notice: t('updated_successfully') }
-        format.json { render :show, status: :ok, location: @service }
-      else
-        format.html { render :edit }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
-      end
+    if @service.update(service_params)
+      redirect_to admin_services_url, notice: t('updated_successfully')
+    else
+      flash[:alert] = @service.errors.values.first.first
+      render :edit
     end
   end
 

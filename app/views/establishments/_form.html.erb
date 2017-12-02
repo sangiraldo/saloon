@@ -26,12 +26,6 @@
       </div>
     </div>
 
-    <!-- <div class="row">
-      <div class="col s12">
-        <%= collection_select(:establishment_ids, :establishment_id, Service.all, :id, :name, class: 'select2', multiple: true,) %>
-      </div>
-    </div> -->
-
     <div class="row">
       <div class="input-field col s12">
         <%= f.select :tag_list, options_for_select(Service.all.map{ |tag| [tag.name]}, selected_key = f.object.tag_list), {}, { required: true, multiple: true, style: "width:100%;", class: "select2 validate active", data: {error: '.validate_service'}} %>

@@ -1,5 +1,20 @@
 <h2 class="center"><%= t('establishments') %></h2>
 
+<div class="container">
+  <div class="row">
+      <%= search_form_for @search, url: search_establishments_url do |f| %>
+        <div class="col s5">
+          <%= f.label t('city_cont') %>
+          <%= f.select :city_cont, options_for_select(Establishment.all.map{ |tag| [tag.city]}), {}, { required: true, style: "width:100%;", class: "select2_city"} %>
+        </div>
+        <div class="col s5">
+          <%= f.submit class: "btn waves-effect waves-light teal darken-1", style: "margin-top: 13px" %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+<h5 class="center"><%= t('filter_services') %></h5>
 <div class="categories">
   <% @tag_establishments.each do |tag| %>
     <div class="card row">

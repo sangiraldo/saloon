@@ -24,4 +24,12 @@ document.addEventListener("turbolinks:load", function() {
     placeholder: "Seleccione o escriba un servicio"
   });
 
+  $(".select2_city").select2({
+    placeholder: "Seleccione una ciudad",
+    allowClear: true
+  });
+
+  $('.input-field label').addClass('active');
+  setTimeout(function(){ $('.input-field label').addClass('active'); }, 1);
+
  })

@@ -23,9 +23,15 @@ Rails.application.routes.draw do
   end
 
   root 'pages#home'
-  resources :establishments
+  resources :establishments do
+    collection do
+      match 'search' => 'establishments#search', via: [:get, :post], as: :search
+    end
+  end
+  
   get "/user_establishments", to: "establishments#user_establishment"
   get "establishments/services/:tag", to: "establishments#index", as: :tag_establishments
   get "services_establishment", to: "establishments#services", as: :services_establishment
+  get "about", to: "pages#about"
 
 end

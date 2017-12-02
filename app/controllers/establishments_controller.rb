@@ -4,10 +4,11 @@ class EstablishmentsController < ApplicationController
   # GET /establishments
   # GET /establishments.json
   def index
+    @search = Establishment.search(params[:q])
     if params[:tag]
-      @establishments = Establishment.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 8)
+      @establishments = @search.result.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 8)
     else
-      @establishments = Establishment.all.paginate(page: params[:page], per_page: 8)
+      @establishments = @search.result.paginate(page: params[:page], per_page: 8)
     end
     @tag_establishments = Establishment.tag_counts.last(5)
     @tag_establishment_count = Establishment.tag_counts.count
@@ -35,29 +36,22 @@ class EstablishmentsController < ApplicationController
   # POST /establishments.json
   def create
     @establishment = Establishment.new(establishment_params)
-
-    respond_to do |format|
-      if @establishment.save
-        format.html { redirect_to @establishment, notice: t('created_successfully') }
-        format.json { render :show, status: :created, location: @establishment }
-      else
-        format.html { render :new }
-        format.json { render json: @establishment.errors, status: :unprocessable_entity }
-      end
+    if @establishment.save
+      redirect_to @establishment, notice: t('created_successfully')
+    else
+      flash[:alert] = @establishment.errors.values.first.first
+      render :new
     end
   end
 
   # PATCH/PUT /establishments/1
   # PATCH/PUT /establishments/1.json
   def update
-    respond_to do |format|
-      if @establishment.update(establishment_params)
-        format.html { redirect_to @establishment, notice: t('updated_successfully') }
-        format.json { render :show, status: :ok, location: @establishment }
-      else
-        format.html { render :edit }
-        format.json { render json: @establishment.errors, status: :unprocessable_entity }
-      end
+    if @establishment.update(establishment_params)
+      redirect_to @establishment, notice: t('updated_successfully')
+    else
+      flash[:alert] = @establishment.errors.values.first.first
+      render :new
     end
   end
 
@@ -77,6 +71,11 @@ class EstablishmentsController < ApplicationController
 
   def services
     @tag_establishments = Establishment.tag_counts
+  end
+
+  def search
+    index
+    render :index
   end
 
   private

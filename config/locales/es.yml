@@ -42,7 +42,8 @@ es:
   about: "Nosotros"
   establishment_listing: Listado de establecimientos
   city: Ciudad
-  name_cont: Nombre contiene
+  name_cont: Buscar por nombre
+  city_cont: Bucar por ciudad
   view_more: Ver más
   new_establishment: Nuevo establecimiento
   edit_establishment: Editar establecimiento
@@ -55,3 +56,16 @@ es:
     one: establecimiento
     other: establecimientos
   view-more_services: Ver más servicios
+  filter_services: Filtrar por servicios
+
+  activerecord:
+    errors:
+      models:
+        establishment:
+          attributes:
+            name:
+              taken: 'Nombre de establecimiento existente'
+        service:
+          attributes:
+            name:
+              taken: 'Nombre de servicio existente'

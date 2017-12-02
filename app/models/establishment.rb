@@ -11,10 +11,10 @@ class Establishment < ApplicationRecord
   # Validations
 
   validates :name, :description, :city, :address, :district, presence: true
-  validates :name, uniqueness: true
+  validates_uniqueness_of :name, case_sensitive: false
 
   # Tags
 
   acts_as_taggable
-  
+
 end
