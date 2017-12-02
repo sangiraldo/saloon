@@ -4,7 +4,7 @@
     <ul class="right hide-on-med-and-down" data-turbolinks="false">
       <li> <%= link_to t('establishments').upcase, establishments_url %></li>
       <li> <%= link_to t('about').upcase, about_url %></li>
-      <li> <%= link_to t('contact').upcase, establishments_url %></li>
+      <li> <%= link_to t('contact').upcase, new_contact_url %></li>
 
       <% if user_signed_in? %>
         <a class="dropdown-button btn grey darken-1 profile" data-beloworigin="true"

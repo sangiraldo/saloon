@@ -28,6 +28,8 @@ Rails.application.routes.draw do
       match 'search' => 'establishments#search', via: [:get, :post], as: :search
     end
   end
+
+  resources :contacts, only: [:new, :create]
   
   get "/user_establishments", to: "establishments#user_establishment"
   get "establishments/services/:tag", to: "establishments#index", as: :tag_establishments

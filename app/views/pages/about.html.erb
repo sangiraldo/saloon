@@ -1,1 +1,40 @@
-<h1>notoros</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col l10 m10 offset-l1 offset-m1">
+      <h2 class="center"><%= t('saloon').upcase %></h2>
+      <p class="center">
+        <%= t('slogan_about') %>
+      </p>
+    </div>
+  </div>
+
+  <div class="grey lighten-5 row">
+    <div class="col l4 m5 s12 push-l7 push-m7">
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/aliviate/static/about/mission.jpg", class:"responsive-img") %>
+    </div>
+    <div class="col l6 m7 s12 pull-l4 pull-m5 offset-l1 about-content">
+      <h3><%= t('mission').capitalize %></h3>
+      <p>
+        Nuestra misión es ofrecer una plataforma web que brinde información acerca de establecimientos y
+        servicios, que impulsen al empresario de la belleza personal en su incursión al mundo de la Internet
+        para que puedan auto gestionar y proporcionar información precisa en todo momento sin depender de terceros,
+        con el fin de llegar al consumidor del siglo XXI, donde los usuarios son más "versátiles" y usan cada vez
+        más la red para encontrar y disfrutar de servicios reduciendo al mínimo el desplazamiento y el tiempo usado
+        para encontrar el servicio.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col l4 m5 s12 offset-l1">
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/aliviate/static/about/vision.jpg", class:"responsive-img") %>
+    </div>
+    <div class="col l6 m7 s12 about-content">
+      <h3><%= t('vision').capitalize %></h3>
+      <p>
+        En nuestra visión está planificada la posibilidad de añadir como herramienta la gestión de citas y reservas de servicios presenciales
+        y a domicilio desde la plataforma, para lograr la relación directa cliente-servicio para facilitar más este proceso, además de poder usar
+        la herramienta como el cronograma de un establecimiento.
+      </p>
+    </div>
+  </div>
+</div>

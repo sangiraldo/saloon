@@ -57,7 +57,16 @@ es:
     other: establecimientos
   view-more_services: Ver más servicios
   filter_services: Filtrar por servicios
-
+  send_contact: Enviar mensaje
+  message: Mensaje
+  success_email_message: "El mensaje ha sido enviado con éxito."
+  error_email_message: "No se pudo enviar el mensaje."
+  contact_me: "Contáctanos"
+  mission: "Misión"
+  vision: "Visión"
+  saloon: "Saloon"
+  slogan_about: "Saloon es una aplicación web, donde encontrarás toda la información
+                 acerca de los establecimientos de estética personal. "
   activerecord:
     errors:
       models:

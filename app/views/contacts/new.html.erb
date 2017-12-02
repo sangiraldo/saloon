@@ -1,0 +1,32 @@
+<div class="container">
+  <h3 class="center"> <%= t('contact_me') %> </h3>
+  <div class="row">
+    <%= form_for @contact do |f| %>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.text_field :name, id: "name", class: "validate", required: true %>
+          <%= f.label t('full_name'), for: "name" %>
+        </div>
+        <div class="input-field col s6">
+          <%= f.text_field :email, id: "email", class: "validate", required: true %>
+          <%= f.label t('email'), for: "email" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_area :message, as: :text, class: "materialize-textarea", id: "message" %>
+          <%= f.label t('message'), for: "email" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12" style="display: none">
+          <%= f.text_field :nickname %>
+          <%= f.label :nickname, hint: "Deje este campo en blanco" %>
+        </div>
+      </div>
+      <div class="container center">
+        <%= f.submit t('send_contact'), class: "btn waves-effect waves-light teal darken-1" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -21,6 +21,7 @@ gem 'groupdate', '~> 3.2'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'will_paginate-materialize', '~> 0.1.0'
+gem 'mail_form'
 
 gem 'materialize-sass'
 
