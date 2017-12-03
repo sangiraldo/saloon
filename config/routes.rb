@@ -30,10 +30,13 @@ Rails.application.routes.draw do
   end
 
   resources :contacts, only: [:new, :create]
-  
+
   get "/user_establishments", to: "establishments#user_establishment"
-  get "establishments/services/:tag", to: "establishments#index", as: :tag_establishments
-  get "services_establishment", to: "establishments#services", as: :services_establishment
-  get "about", to: "pages#about"
+  get "/establishments/services/:tag", to: "establishments#index", as: :tag_establishments
+  get "/services_establishment", to: "establishments#services", as: :services_establishment
+  get "/about", to: "pages#about"
+  get "/terms_and_conditions", to: "pages#terms_and_conditions"
+
+
 
 end

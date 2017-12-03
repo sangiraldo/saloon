@@ -31,10 +31,32 @@
     <div class="col l6 m7 s12 about-content">
       <h3><%= t('vision').capitalize %></h3>
       <p>
-        En nuestra visión está planificada la posibilidad de añadir como herramienta la gestión de citas y reservas de servicios presenciales
-        y a domicilio desde la plataforma, para lograr la relación directa cliente-servicio para facilitar más este proceso, además de poder usar
-        la herramienta como el cronograma de un establecimiento.
+        En nuestra visión está planificada la opción de la gestión de citas y reservas de servicios presenciales
+        y a domicilio desde la plataforma, para lograr la relación directa cliente-servicio y facilitar más este
+        proceso, además de poder usar la herramienta como el cronograma de un establecimiento. Esperamos posicionarnos
+        en el mercado de la belleza como una importante herramienta de apoyo tecnológico en gestión de clientes, citas y
+        retroalimentación para establecimientos con la opción de calificación y puntuación de los servicios, brindando la
+        capacidad de gestión del negocio y mejora continua.
       </p>
+    </div>
+  </div>
+
+  <div class="grey lighten-5 row">
+    <div class="col l4 m5 s12 push-l7 push-m7">
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/aliviate/static/about/quality.jpeg", class:"responsive-img") %>
+    </div>
+    <div class="col l6 m7 s12 pull-l4 pull-m5 offset-l1 about-content">
+      <h3><%= t('quality_policies').capitalize %></h3>
+      <p>
+        <%= t('content_quality_policies').capitalize %><br>
+        Ver más: <%= link_to t('terms_and_conditions'), terms_and_conditions_url, style: "color: #42a5f5;"  %>
+      </p>
+    </div>
+  </div>
+
+  <div class=" container row">
+    <div class="col l6 m7 s12 about-content">
+
     </div>
   </div>
 </div>

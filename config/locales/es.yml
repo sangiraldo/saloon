@@ -66,7 +66,14 @@ es:
   vision: "Visión"
   saloon: "Saloon"
   slogan_about: "Saloon es una aplicación web, donde encontrarás toda la información
-                 acerca de los establecimientos de estética personal. "
+                 acerca de los establecimientos de estética personal, para que encuentres el servicio que buscas, donde quieras y cuando lo quieras, asi de facil. "
+  terms_and_conditions: "Terminos y condiciones"
+  quality_policies: "políticas de calidad"
+  content_quality_policies: "garantizar la satisfacción de nuestros clientes, brindándoles información y
+                              servicios que cumplan con todas las expectativas y los estandares de servicios pactados,
+                              a través de una buena relación con clientes, usuarios y un grupo humano
+                              capacitado y dotado con los recursos necesarios que faciliten el mejoramiento continuo."
+
   activerecord:
     errors:
       models:
