@@ -5,7 +5,7 @@
       <%= search_form_for @search, url: search_establishments_url do |f| %>
         <div class="col s5">
           <%= f.label t('city_cont') %>
-          <%= f.select :city_cont, options_for_select(Establishment.all.map{ |tag| [tag.city]}), {}, { required: true, style: "width:100%;", class: "select2_city"} %>
+          <%= f.select :city_cont, options_for_select(@cities.map{ |tag| tag}), {}, { required: true, style: "width:100%;", class: "select2_city"} %>
         </div>
         <div class="col s5">
           <%= f.submit class: "btn waves-effect waves-light teal darken-1", style: "margin-top: 13px" %>

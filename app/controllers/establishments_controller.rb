@@ -12,6 +12,7 @@ class EstablishmentsController < ApplicationController
     end
     @tag_establishments = Establishment.tag_counts.last(5)
     @tag_establishment_count = Establishment.tag_counts.count
+    @cities = Establishment.distinct.pluck(:city)
   end
 
   # GET /establishments/1
