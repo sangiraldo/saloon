@@ -39,7 +39,7 @@
         <% end %>
         <li> <%= link_to t('sign_out'), destroy_user_session_url, method: :delete %></li>
       <% else %>
-        <li> <%= link_to(t('login'), new_user_session_url) %> </li>
+        <li> <%= link_to(t('sign_in'), new_user_session_url) %> </li>
         <li> <%= link_to t('sign_up'), new_user_registration_url  %></li>
       <% end %>
     </ul>
