@@ -6,9 +6,9 @@ class EstablishmentsController < ApplicationController
   def index
     @search = Establishment.search(params[:q])
     if params[:tag]
-      @establishments = @search.result.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 8)
+      @establishments = @search.result.tagged_with(params[:tag]).order(created_at: :desc).paginate(page: params[:page], per_page: 8)
     else
-      @establishments = @search.result.paginate(page: params[:page], per_page: 8)
+      @establishments = @search.result.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
     end
     @tag_establishments = Establishment.tag_counts.last(5)
     @tag_establishment_count = Establishment.tag_counts.count
